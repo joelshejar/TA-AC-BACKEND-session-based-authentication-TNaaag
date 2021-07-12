@@ -3,9 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+mongoose.connect(
+  'mongodb://localhost:27017/test5',
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (err) => {
+    console.log(err ? err : 'database connected');
+  }
+);
 
 var app = express();
 
