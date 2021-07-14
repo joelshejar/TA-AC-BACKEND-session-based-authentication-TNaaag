@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <title>Blogs</title>
+  </head>
+  <body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/users/signup">signup</a>
+        <a href="/users/login">login</a>
+        <a href="/users/logout">logout</a>
+        <a href="/article">articles</a>
+        <a href="/article/new">add article</a>
+    </header>
+    <% if(user){%>
+    <div class="users">Welcom <%= user.fullName()%></div>
+    <%}%>
+    <ul>
+      <% articles.forEach((article)=>{ %>
+      <li>
+        <h3><%= article.title%></h3>
+        <p><%= article.description%></p>
+        <p>Written by: <span><%= article.author%></span></p>
+        <a href="/article/<%= article._id %>/detail">
+          <button class="btn">See more</button>
+        </a>
+      </li>
+      <%})%> 
+    </ul>
+  </body>
+</html><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <title>Blogs</title>
+  </head>
+  <body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/users/signup">signup</a>
+        <a href="/users/login">login</a>
+        <a href="/users/logout">logout</a>
+        <a href="/article">articles</a>
+        <a href="/article/new">add article</a>
+    </header>
+    <% if(user){%>
+    <div class="users">Welcom <%= user.fullName()%></div>
+    <%}%>
+    <ul>
+      <% articles.forEach((article)=>{ %>
+      <li>
+        <h3><%= article.title%></h3>
+        <p><%= article.description%></p>
+        <p>Written by: <span><%= article.author%></span></p>
+        <a href="/article/<%= article._id %>/detail">
+          <button class="btn">See more</button>
+        </a>
+      </li>
+      <%})%> 
+    </ul>
+  </body>
+</html>
