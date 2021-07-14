@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+    <title>Handeling Forms 👇</title>
+  </head>
+  <body class="home-index">
+    <div class="container">
+      <header>
+        <h1>Login to Account</h1>
+        <a href="/">Home</a>
+        <a href="/users/signup">signup</a>
+        <a href="/users/login">login</a>
+        <a href="/users/logout">logout</a>
+        <a href="/article">articles</a>
+        <a href="/article/new">add article</a>
+      </header>
+      <% if(error) {%>
+      <p><%= error%></p>
+      <%}%>
+      <form action="/users/login" method="POST">
+          <label for="text">Email</label>
+          <input
+            id="text"
+            type="email"
+            name="email"
+            placeholder="arya@stark.com"
+          />
+          <label for="text">Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
