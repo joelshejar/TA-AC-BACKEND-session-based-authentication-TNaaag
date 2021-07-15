@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Shooping Cart</a>
+        <nav>
+          <ul class="flex align-center">
+            <li>
+              <a href="/admin/addItem">add Item</a>
+            </li>
+            <li>
+              <a href="/users/logout">logout</a>
+            </li>
+            <li>
+              <a href="/items">List Of Items</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="padding">
+        <div class="container">
+          <h2 class="secondary-heading text-center padding">add Item</h2>
+          <div class="flex justify-between-flex align-center">
+              <div class="font-0 flex-40">
+                  <img src="http://www.pngplay.com/wp-content/uploads/1/Shopping-Cart-PNG-Image.png" alt="" class="img">
+              </div>
+              <form class="flex-40" action="/admin/<%= id%>/addItem" method="POST">
+                <label for="name"> name of product </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="name of product"
+                  required
+                  class="form-control"
+                />
+                <label for="quantity">quantity of product</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantityOfProduct"
+                  placeholder="quantity of product"
+                  class="form-control"
+                />
+                <label for="price">price of product</label>
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  class="form-control"
+                  placeholder="enter price of product"
+                />
+                <button class="btn" type="submit">add product</button>
+              </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

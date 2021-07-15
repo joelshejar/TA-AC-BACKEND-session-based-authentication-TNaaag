@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/">Shooping card</a>
+        <nav>
+          <ul>
+            <li><a href="/admin/addItem">Add Item</a></li>
+            <li><a href="/users/logout">logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <% data.forEach(element => { %>
+          <article>
+            <h3><%= element.name %></h3>
+            <p><%= element.quantityOfProduct></p>
+            <p> 	
+                &#8377;<%= element.price ></p>
+            <div>
+                <a href="/item/<%= element._id%>/detail">detail</a>
+                <a href="/item/<%= element._id%>/delete">delete</a>
+            </div>
+          </article>
+          <% }) %>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Shooping card</a>
+        <nav>
+          <ul class="flex align-center">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/items">Items List</a></li>
+            <li><a href="/users/login">login</a></li>
+            <li><a href="/admin/signup">signup</a></li>
+            <li><a href="/users/logout">logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="padding login-hero">
+        <div class="container flex justify-between-flex align-center">
+          <div class="font-0 flex-40">
+            <img
+              src="https://png.pngtree.com/png-vector/20200422/ourmid/pngtree-online-shopping-concept-with-man-and-woman-characters-png-image_2187791.jpg"
+              alt=""
+              class="img"
+            />
+          </div>
+          <div class="flex-40 form-container">
+            <h2 class="secondary-heading">SignIn</h2>
+            <div class="form-container">
+              <% if(error) { %>
+              <p class="wrong"><%= error %></p>
+              <% } %>
+              <form action="/users/login" method="POST">
+                <label for="email">email</label>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="enter your name"
+                  id="email"
+                  class="form-control"
+                />
+                <label for="password">password</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="enter your password"
+                  id="password"
+                  class="form-control"
+                />
+                <button type="submit" class="btn">login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

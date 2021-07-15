@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="container flex justify-between-flex align-center">
+            <a href="/" class="logo">Shooping Cart</a>
+            <nav>
+                <ul class="flex align-center">
+                    <li><a href="/items">Items List</a></li>
+                    <li><a href="/admin/addItem">add item</a></li>
+                    <li><a href="/users/logout">logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="das-hero padding">
+            <div class="container">
+                <h1 class="primary-heading text-center">Your added items List</h1>
+                <div class="grid grid-template-col-4 gap">
+                    <% data.itemId.forEach(element => { %>
+                        <article class="card">
+                          <h3 class="ternary-heading"><%= element.name %></h3>
+                          <p>qty:<%= element.quantityOfProduct%></p>
+                          <p> 	
+                              &#8377;<%= element.price %></p>
+                          <div class="flex justify-between-flex align-center">
+                              <a href="/items/<%= element._id%>/detail" class="btn">detail</a>
+                          </div>
+                        </article>
+                        <% }) %>
+                </div>
+                <a href="/admin/addItem">
+                    <button> <i class="fas fa-plus-square"></i> add item</button>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
