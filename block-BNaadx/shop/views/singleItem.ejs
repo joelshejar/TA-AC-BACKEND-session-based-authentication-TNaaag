@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/379acff5c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="container flex justify-between-flex align-center">
+            <a href="/" class="logo">Shooping card</a>
+            <nav>
+                <ul class="flex align-center">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/items">List Of Items</a></li>
+                    <li><a href="/users/login">LogIn</a></li>
+                   <li><a href="/users/logout">LogOut</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="padding details-hero">
+            <div class="container">
+                <h2 class="ternary-heading">
+                    <%= data.name %>
+                </h2>
+                <div>
+                    <h3 class="ternary-heading">quantity OfP roduct</h3>
+                    <p><%= data.quantityOfProduct %></p>
+                </div>
+                <div>
+                    <h3 class="ternary-heading">Price Of Product</h3>
+                    <p><%= data.price %></p>
+                </div>
+                <div>
+                    <p><%= data.likes.length %></p>
+                    <a href="/items/<%= data._id %>/likes" class="like"><i class="far fa-thumbs-up"></i></a>
+                </div>
+                <div>
+                    <h3 class="ternary-heading">admin name</h3>
+                    <p><%= data.adminId.name%></p>
+                </div>
+                <a class="btn" href="/items/<%=data._id%>/edit">edit</a>
+                <a class="btn" href="/items/<%= data._id %>/delete">delete</a>
+            </div>
+        </section>
+    </main> 
+</body>
+</html>

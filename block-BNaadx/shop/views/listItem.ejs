@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="container flex justify-between-flex align-center">
+            <a href="/" class="logo">Shooping cart</a>
+            <nav>
+                <ul class="flex align-center">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/users/login">login</a></li>
+                    <li><a href="/admin/signup">signup</a></li>
+                   <li><a href="/users/logout">logout</a></li>
+                   <li><a href="/items/carts">cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="padding">
+            <h2 class="secondary-heading text-center">List Of Items</h2>
+            <div class="container grid grid-template-col-4 padding">
+              <% data.forEach(element => { %>
+              <article class="card">
+                <h3 class="ternary-heading"><%= element.name %></h3>
+                <p>qty:<%= element.quantityOfProduct%></p>
+                <p> 	
+                    &#8377;<%= element.price %></p>
+                <div class="flex justify-between-flex align-center">
+                    <a href="/items/<%= element._id%>/detail" class="btn">detail</a>
+                    <% if(session) { %>
+                        <a href="/items/<%=element._id%>/cart" class="btn">add card</a>
+                    <% } %>
+                    <% if(!session) { %>
+                        <a href="/users/login" class="btn">add card</a>
+                    <% } %>
+                </div>
+              </article>
+              <% }) %>
+            </div>
+          </section>
+    </main>
+</body>
+</html>
