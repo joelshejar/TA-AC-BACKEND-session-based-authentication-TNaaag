@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp for Admin</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="container flex justify-between-flex align-center">
+        <a href="/" class="logo">Shooping Card</a>
+        <nav>
+          <ul class="flex align-center">
+            <li>
+              <li><a href="/">Home</a></li>
+              <li>
+                <a href="/items">List Of Items</a>
+              </li>
+              <li>
+                <a href="/users/login">User LogIn</a>
+              </li>
+              <li>
+                <a href="/admin/login">Admin Login</a>
+              </li>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="padding hero-signup">
+        <div class="container flex justify-between-flex align-center">
+          <div class="font-0 flex-50">
+            <img src="https://dlp.allen.ac.in/images/login-page.png" alt="" class="img">
+          </div>
+          <div class="flex-40">
+            <h2 class="secondary-heading">Sign up</h2>
+            <div>
+              <% if(error) {%>
+              <p><%= error%></p>
+              <%}%>
+              <form action="/admin/signup" method="POST">
+                <label for="name"> name </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="enter your name"
+                  required
+                  class="form-control"
+                />
+                <label for="email">email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="enter your email"
+                  required
+                  class="form-control"
+                />
+                <label for="password">password</label>
+                
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="set your password"
+                  class="form-control"
+                  required
+                />
+                <div class="flex align-center checkbox-box">
+                  <input type="checkbox" name="isAdmin" id="admin"  class="checkbox"/>
+                  <label for="admin">you are admin</label>
+                </div>
+                <button type="submit" class="form-control">submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
